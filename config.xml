@@ -77,7 +77,7 @@
     -->
 
     <!-- Define app icon for each platform. -->
-    <icon src="clk-bogazici-logo-32.png" />
+    
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
     <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
     <icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
@@ -92,6 +92,16 @@
     <icon src="res/icon/windows-phone/icon-48.png"  gap:platform="winphone" />
     <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />
 	<icon src="res/icon/ios/icon-72_at_2x.png"      gap:platform="ios" width="144" height="144" />
+	
+	< icon src="icon.png" gap:platform="ios" / > 
+< icon src="icon-57.png" width="57" height="57" gap:platform="ios" / > 
+< icon src="icon-57@2x.png" width="114" height="114" gap:platform="ios" / > 
+< icon src="icon-72.png" width="72" height="72" gap:platform="ios" / > 
+< icon src="icon-72@2x.png" width="152" height="152" gap:platform="ios" / > 
+< icon src="icon-76.png" width="76" height="76" gap:platform="ios" / > 
+< icon src="icon-76@2x.png" width="152" height="152" gap:platform="ios" / > 
+< icon src="icon-120.png" width="120" height="120" gap:platform="ios" / > 
+< icon src="icon-152.png" width="152" height="152" gap:platform="ios" / >
 
     <!-- Define app splash screen for each platform. -->
 	<!--
