@@ -22,7 +22,7 @@ if(typeof(Sys)!=='undefined')Sys.Application.notifyScriptLoaded();
         var hf = $get('radScriptMananer_TSM');
         if (!hf) return;
         if (!hf._RSM_init) { hf._RSM_init = true; hf.value = ''; }
-        hf.value += ';;System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35:tr-TR:1453655a-6b8d-49b1-94c2-f77a352f5241:ea597d4b:b25378d2';                                    
+        hf.value += ';;System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35:tr-TR:509f92a1-e5fd-464f-a450-13846a6c973b:ea597d4b:b25378d2';                                    
         Sys.Application.remove_load(loadHandler);
     };
     Sys.Application.add_load(loadHandler);

@@ -473,6 +473,7 @@ $(document).ready(function () {
             zIndex: 30000,
             show: 'fade',
             hide: 'fade',
+            position: 'center',
             closeOnEscape: EscKapat,
             open: function (event, ui) {
                 if (!KapatGoster) {
@@ -482,6 +483,7 @@ $(document).ready(function () {
                 $(this).parent().find('.ui-dialog-titlebar').append("<span class='" + sinif + "'>" + baslik + "</span>");
 
             },
+            dialogClass: 'fixed-dialog',
             close: function (event, ui) {
                 if (btnKapat != undefined) {
                     $('#' + btnKapat).click();
@@ -525,6 +527,7 @@ $(document).ready(function () {
                 $(this).parent().find('.ui-dialog-title').remove();
                 $(this).parent().find('.ui-dialog-titlebar').append("<span class='" + sinif + "'>" + baslik + "</span>");
             },
+            dialogClass: 'fixed-dialog',
             close: function (event, ui) {
                 if (btnKapat != undefined) {
                     $('#' + btnKapat).click();
@@ -580,6 +583,7 @@ $(document).ready(function () {
                 $(this).parent().find('.ui-dialog-title').remove();
                 $(this).parent().find('.ui-dialog-titlebar').append("<span class='" + sinif + "'>" + baslik + "</span>");
             },
+            dialogClass: 'fixed-dialog',
             close: function (event, ui) {
                 if (btnKapat != undefined) {
                     $('#' + btnKapat).click();
@@ -620,6 +624,7 @@ $(document).ready(function () {
                 autoOpen: true,
                 width: 400,
                 modal: true,
+                position: 'center',
                 show: 'fade',
                 hide: 'fade',
                 zIndex: 9999,
@@ -926,7 +931,64 @@ $(document).ready(function () {
 
         $('#dialog').dialog({
             autoOpen: true,
-            width: 300,
+            width: 400,
+            modal: Modal,
+            zIndex: 9999,
+            show: 'fade',
+            hide: 'fade',
+            closeText: 'Kapat',
+            closeOnEscape: EscKapat,
+            open: function (event, ui) {
+                if (!KapatGoster) {
+                    $(this).parent().children().children('.ui-dialog-titlebar-close').hide();
+                }
+                $(this).parent().find('.ui-dialog-title').remove();
+                $(this).parent().find('.ui-dialog-titlebar').append("<span class='" + sinif + "'>" + baslik + "</span>");
+
+
+                //var win = $(window);
+                //$(this).parent().css({
+                //    position: 'absolute',
+                //    left: (win.width() - $(this).parent().outerWidth()) / 2,
+                //    top: (win.height() - $(this).parent().outerHeight()) / 2
+                //});
+
+            },
+            dialogClass: 'fixed-dialog',
+
+            close: function (event, ui) {
+                $('#' + btnKapat).click();
+            },
+            buttons: {
+                "Tamam": function () {
+                    $(this).dialog("close");
+                    $('#dialog').remove();
+                }
+            },
+
+        });
+
+
+
+        
+    }
+
+    
+
+    if ($('#dialogOtomatikKapat').length) {
+
+        var sinif = $('#dialogOtomatikKapat').attr("class");
+        var baslik = $('#dialogOtomatikKapat').attr("title");
+        var EscKapat = $('#dialogOtomatikKapat').attr("EscKapat") == 'False' ? false : true;
+        var Modal = $('#dialogOtomatikKapat').attr("Modal") == 'False' ? false : true;
+        var KapatGoster = $('#dialogOtomatikKapat').attr("KapatGoster") == 'False' ? false : true;
+        var btnKapat = $('#dialogOtomatikKapat').attr("btnKapat");
+        var OtomatikKapatSaniye = $('#dialogOtomatikKapat').attr("OtomatikKapatSaniye");
+        var KapatParentMi = $('#dialogOtomatikKapat').attr("KapatParentMi") == 'False' ? false : true;
+
+        $('#dialogOtomatikKapat').dialog({
+            autoOpen: true,
+            width: 400,
             modal: Modal,
             zIndex: 9999,
             show: 'fade',
@@ -940,16 +1002,17 @@ $(document).ready(function () {
                 $(this).parent().find('.ui-dialog-title').remove();
                 $(this).parent().find('.ui-dialog-titlebar').append("<span class='" + sinif + "'>" + baslik + "</span>");
             },
+            dialogClass: 'fixed-dialog',
             close: function (event, ui) {
-                $('#' + btnKapat).click();
-            },
-            buttons: {
-                "Tamam": function () {
-                    $(this).dialog("close");
-                    $('#dialog').remove();
-                }
+                if (KapatParentMi)
+                    $(parent.document).find('#' + btnKapat).click();
+                else
+                    $('#' + btnKapat).click();
             }
         });
+
+        if (OtomatikKapatSaniye > 0)
+            setTimeout(function () { $('#dialogOtomatikKapat').dialog('close'); }, OtomatikKapatSaniye * 1000);
     }
 
     if ($('.inputDialog').length) {
@@ -971,8 +1034,6 @@ $(document).ready(function () {
                 height: yukseklik,
                 modal: Modal,
                 zIndex: 9999,
-                show: 'fade',
-                hide: 'fade',
                 closeText: 'Kapat',
                 closeOnEscape: EscKapat,
                 open: function (event, ui) {
@@ -981,7 +1042,9 @@ $(document).ready(function () {
                     }
                     $(this).parent().find('.ui-dialog-title').remove();
                     $(this).parent().find('.ui-dialog-titlebar').append("<span class='" + sinif + "'>" + baslik + "</span>");
+
                 },
+                dialogClass: 'fixed-dialog',
                 close: function (event, ui) {
                     $('#' + btnKapat).click();
                 }
@@ -1001,7 +1064,8 @@ $(document).ready(function () {
             closeOnEscape: true,
             width: genislik,
             show: 'fade',
-            hide: 'fade'
+            hide: 'fade',
+            dialogClass: 'fixed-dialog',
         });
     }
 
@@ -1017,29 +1081,31 @@ $(document).ready(function () {
         var KapatGoster = $('#sayfaDialog').attr("KapatGoster") == 'False' ? false : true;
         var btnKapat = $('#sayfaDialog').attr("btnKapat");
 
-        $('#sayfaDialog').html('<div id="divIframe" style="width:99%;height:99%;"><iframe border="0" src="' + url + '" width="100%" height="100%"></iframe></div>').dialog({
+        $('#sayfaDialog').dialog({
             autoOpen: true,
             width: genislik,
             height: yukseklik,
             modal: Modal,
             zIndex: 9999,
-            show: 'fade',
-            hide: 'fade',
             closeText: 'Kapat',
             closeOnEscape: EscKapat,
             open: function (event, ui) {
                 if (!KapatGoster) {
                     $(this).parent().children().children('.ui-dialog-titlebar-close').hide();
                 }
+
+                $(this).html('<div id="divIframe" style="width:99%;height:99%;"><iframe id="ifrmPopup" style="width:100%;height:100%" frameBorder="0"></iframe></div>');
+                $('#ifrmPopup').attr("src", url);
                 $(this).parent().find('.ui-dialog-title').remove();
                 $(this).parent().find('.ui-dialog-titlebar').append("<span class='" + sinif + "'>" + baslik + "</span>");
             },
+            dialogClass: 'fixed-dialog',
             close: function (event, ui) {
                 $('#divIframe').remove();
                 if (btnKapat != undefined)
                     $($get(btnKapat)).click();
             }
-        });
+        }).parent().appendTo($("form"));;
     }
 
     /*
@@ -1438,7 +1504,10 @@ $(document).ready(function () {
     $.each($rows, function (index, row) {
         $table.append(row);
     });
+
 });
+
+
 
 //});
 
