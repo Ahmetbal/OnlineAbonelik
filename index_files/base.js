@@ -457,7 +457,7 @@ $(document).ready(function () {
     });
 
     if ($('#dialogYonlendir').length) {
-
+        debugger;
         var sinif = $('#dialogYonlendir').attr("class");
         var baslik = $('#dialogYonlendir').attr("title");
         var EscKapat = $('#dialogYonlendir').attr("EscKapat") == 'False' ? false : true;
@@ -483,7 +483,7 @@ $(document).ready(function () {
                 $(this).parent().find('.ui-dialog-titlebar').append("<span class='" + sinif + "'>" + baslik + "</span>");
 
             },
-            dialogClass: 'fixed-dialog',
+            dialogClass: 'fixed-dialog-yonlendir',
             close: function (event, ui) {
                 if (btnKapat != undefined) {
                     $('#' + btnKapat).click();
