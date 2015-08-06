@@ -85,10 +85,22 @@
     <icon src="icon-96-xhdpi.png"  gap:platform="android"    gap:qualifier="xhdpi" />
     <icon src="icon-80.png"     gap:platform="blackberry" />
     <icon src="icon-80.png"     gap:platform="blackberry" gap:state="hover"/>
-    <icon src="icon-57.png"            gap:platform="ios"        width="57" height="57" />
-    <icon src="icon-72.png"            gap:platform="ios"        width="72" height="72" />
+
+	<icon src="icon.png" gap:platform="ios" /> 
     <icon src="icon-57-2x.png"         gap:platform="ios"        width="114" height="114" />
     <icon src="icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
+	<icon src="icon-57.png" width="57" height="57" gap:platform="ios" /> 
+	<icon src="icon-57@2x.png" width="114" height="114" gap:platform="ios" /> 
+	<icon src="icon-72.png" width="72" height="72" gap:platform="ios" /> 
+	<icon src="icon-72@2x.png" width="152" height="152" gap:platform="ios" /> 
+	<icon src="icon-76.png" width="76" height="76" gap:platform="ios" /> 
+	<icon src="icon-76@2x.png" width="152" height="152" gap:platform="ios" /> 
+	<icon src="icon-120.png" width="120" height="120" gap:platform="ios" /> 
+	<icon src="icon-152.png" width="152" height="152" gap:platform="ios" />
+
+
+
+
     <icon src="icon-64.png"          gap:platform="webos" />
     <icon src="ricon-48.png"  gap:platform="winphone" />
     <icon src="icon-173.png" gap:platform="winphone"   gap:role="background" />
