@@ -952,8 +952,9 @@ $(document).ready(function () {
                 //    left: (win.width() - $(this).parent().outerWidth()) / 2,
                 //    top: (win.height() - $(this).parent().outerHeight()) / 2
                 //});
-
             },
+
+
             dialogClass: 'fixed-dialog',
 
             close: function (event, ui) {

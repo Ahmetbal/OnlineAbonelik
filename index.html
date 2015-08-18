@@ -29,17 +29,44 @@
     <script type="text/javascript" src="./index_files/jquery.flot.orderBars.js"></script>
 
 
+    
+    
     <script type="text/javascript">
 
+    var viewwidth;
 
+    // the more standards compliant browsers (mozilla/netscape/opera/IE7) use window.innerWidth and window.innerHeight
 
+    if (typeof window.innerWidth != 'undefined') {
+        viewwidth = window.innerWidth
+        
+    }
 
+        // IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
 
+    else if (typeof document.documentElement != 'undefined'
+        && typeof document.documentElement.clientWidth !=
+        'undefined' && document.documentElement.clientWidth != 0)
+    {
+        viewportwidth = document.documentElement.clientWidth
+    }
+
+        // older versions of IE
+
+    else
+    {
+        viewportwidth = document.getElementsByTagName('body')[0].clientWidth
+    }
+    var currentLocation = window.location.pathname;
+    var kontrol='0'
+        if (viewwidth < 770 && currentLocation != "/KullaniciGiris.aspx" && kontrol != 'girildi')
+    {
+        'girildi';
+        window.location = "KullaniciGiris.aspx";
+    }
+</script>
+    <script type="text/javascript">
         $(function () {
-
-
-
-
             $(".row").click(function () {
 
                 if ($('#menuayar').val() == 1) {
@@ -47,7 +74,6 @@
                     $('#menuayar').val('0');
                 }
             });
-
 
             $("#menuayarbutton").click(function () {
 
@@ -269,7 +295,7 @@
 <input type="hidden" name="radScriptMananer_TSM" id="radScriptMananer_TSM" value=";;System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35:tr-TR:509f92a1-e5fd-464f-a450-13846a6c973b:ea597d4b:b25378d2">
 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
 <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEyMDE1NTUyNDAPZBYCZg9kFgICAw9kFhBmDxYCHgdWaXNpYmxlZ2QCAQ8WAh8AaGQCAg8WAh8AaGQCAw8WAh8AZ2QCBA8WAh8AZ2QCBg8WAh8AZ2QCCA9kFhYCAQ8PFgIfAGhkZAIFDxYCHwBnZAIHDxYCHwBnZAIJDxYCHwBnZAIPDxYCHwBnZAIRDxYCHwBnZAITDxYCHwBnZAIVDxYCHwBnZAIXDxYCHwBnZAIZDxYCHwBnZAIbDxYCHwBnZAIJDxYCHgRocmVmBQR0ZWw6FgICAQ8WAh4EVGV4dGVkZKNwcI9GG746xdY1o8ya2KxBBwR19R4JDVVadZDZjRSv">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEyMDE1NTUyNDAPZBYCZg9kFgICAw9kFggCBA8WAh4HVmlzaWJsZWdkAgYPFgIfAGdkAggPZBYWAgMPDxYCHwBoZGQCBQ8WAh8AZ2QCBw8WAh8AZ2QCCQ8WAh8AZ2QCDw8WAh8AZ2QCEQ8WAh8AZ2QCEw8WAh8AZ2QCFQ8WAh8AZ2QCFw8WAh8AZ2QCGQ8WAh8AZ2QCGw8WAh8AZ2QCCQ8WAh4EaHJlZgUEdGVsOhYCAgEPFgIeBFRleHRlZGTk6Sgo1LQojG7hsnnDEoFDbKNGvsyz/YNGXBq8eah+QQ==">
 </div>
 
 <script type="text/javascript">
@@ -298,8 +324,10 @@ function __doPostBack(eventTarget, eventArgument) {
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334">
 	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0">
 	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0">
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAtTfgg79LmpSjZ0QvBOp+WAJDi7DlVCvPf9tpsoamjP7zBGcYHtieJHa6nPbzIzALhktzJiOaMSTS5znQ4FRZeTo+y3sZ7WRftgYFQ0JY3NKvWLgYTJuJzKSK56RLQuqOlmT16ixCAzmjDVhOsdsaYJ6Ix/gcyAFWKED0oUQF2HUbnxNqBYFiryu7CoFOyLos4FxyEEp/EPO03E1HZ//H4U379Q0m6GqfERduQHnguoX940fB6BZxPR/F6bmARpl0jLT7iJJ54JvDtgmSUS2n4t">
+	<input type="hidden" name="__PREVIOUSPAGE" id="__PREVIOUSPAGE" value="X8WeExqDZXQgVb5s1XKP0rK_KulypqBkjfCxZxO7TrmRFozyjJwpXqC_MFESzU3J1u0sRQnrs6RbeFFAuNArT84f3IE9PL7kAu1OfpyYkoY1">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAlHEasUq9QCqo353vyhUDA0bpHV4gbadFEOoH08NrXXmqPst7Ge1kX7YGBUNCWNzSr1i4GEybicykiuekS0LqjpZk9eosQgM5ow1YTrHbGmCeiMf4HMgBVihA9KFEBdh1G58TagWBYq8ruwqBTsi6LOBcchBKfxDztNxNR2f/x+FN+/UNJuhqnxEXbkB54LqF9+L1SPCRQefD+8iva4Xh2S2uUrQ5P0s5SpeWT6ZxfLGw==">
 </div>
+        
         <input type="hidden" id="menuayar" value="0">
         <!-- Fixed navbar -->
         <div class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: #3dbcca; background-image: none; border: none;">
@@ -314,11 +342,9 @@ function __doPostBack(eventTarget, eventArgument) {
                     <a class="navbar-brand" href="./index_files/index.html">
                         <span class="hidden-xs">Online  İşlem Merkezi</span>
                     </a>
-                    <a id="logoutbutton" href="javascript:__doPostBack('ctl00$logoutbutton','')">
-                        <span class="visible-xs"><i class="fa fa-sign-out" style="font-size: 24px; color: white; margin: 14px 3px 0 0; float: right;" data-placement="bottom" title="Çıkış"></i></span>
-                    </a>
+                    
                     <a href="http://10.34.2.252:7777/KullaniciGiris.aspx" onclick="">
-                        <span class="visible-xs"><i class="fa fa-user" style="font-size: 24px; color: white; margin: 14px 8px 0 0; float: right;" data-placement="bottom" title="İşlem Merkezi"></i></span>
+                        <span class="visible-xs"><i class="fa fa-user" style="font-size: 32px; color: white; margin: 14px 12px 0 0; float: right;" data-placement="bottom" title="İşlem Merkezi"></i></span>
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="acilirmenu">
@@ -333,12 +359,10 @@ function __doPostBack(eventTarget, eventArgument) {
                         <li class="hidden-lg hidden-md hidden-sm"><a target="_blank" href="http://www.clkbogazici.com/sayfa.asp?mdl=form&param=ucuz&durum=basvuru"><i class="fa fa-try"></i>&nbsp;İndirimli Enerji Al</a></li>
                         <li class="hidden-lg hidden-md hidden-sm"><a href="http://10.34.2.252:7777/#" onclick="$(&#39;#digerislemler&#39;).click();"><i class="fa fa-arrow-right"></i>&nbsp;Diğer İşlemler</a></li>
                         <li class="hidden-lg hidden-md hidden-sm"><a href="http://10.34.2.252:7777/#" onclick="$(&#39;#yardimkonulari&#39;).click();"><i class="fa fa-info-circle"></i>&nbsp;Yardım Konuları</a></li>
-                        
+                        <li id="liGiris"><a href="http://10.34.2.252:7777/KullaniciGiris.aspx"><i class="fa fa-sign-in"></i>&nbsp; Müşteri Girişi</a></li>
                         <li class="hidden-lg hidden-md hidden-sm"><a href="http://10.34.2.252:7777/OAKullaniciAbone/OAMusteriBilgiDegistirme.aspx"><i class="fa fa-cogs"></i>&nbsp;Hesap Ayarları</a> </li>
+                        <li id="eyt"><a id="eytadres"><i class="fa fa-sign-in"></i>&nbsp; EYT Girişi</a></li>
                         
-                        <li id="liCikis">
-                            <input type="submit" name="ctl00$btnCikis" value="Çıkış" id="btnCikis" class="btn btn-lg btn-primary btn-block" style="background-color:#45865F;border-style:None;">
-                        </li>
 
                     </ul>
                 </div>
@@ -389,7 +413,6 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$radScriptMananer', 'form1', [
                     
 
 
-
     <img id="website" src="./index_files/MobilAppBanner.jpg" style="width: 100%; margin-top: -20px;" alt="websitebanner" usemap="#websitebannermap">
 
     <map name="websitebannermap">
@@ -397,10 +420,10 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$radScriptMananer', 'form1', [
         <area shape="rect" coords="304,240,398,270" href="https://play.google.com/store/apps/details?id=com.infopark.onlineabonelik" target="_blank" alt="Android" title="Android">
     </map>
 
-    <img id="mobil" src="./index_files/27.jpg" style="width: 100%; margin-top: -15px; margin-left: 0px;">
+    <img id="mobil" src="./index_files/mobilbanner.jpg" style="width: 100%; margin-top: -15px; margin-left: 0px;">
 
     <div id="mobilyazi">
-        <center><h5 style="color:#273271; margin-bottom: 2px; margin-top: 5px;"><b>Hoş geldiniz ! &nbsp; Size nasıl yardımcı olabiliriz ?</b> </h5></center>
+        <center><h5 style="color:#273271; margin-bottom: 2px; margin-top: 5px;"><b>Hoş geldiniz! Size nasıl yardımcı olabiliriz?</b> </h5></center>
     </div>
 
 
@@ -436,11 +459,11 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$radScriptMananer', 'form1', [
         <div class="col-md-3" style="padding: 3px 0 0 0;">
             
             
-            
-
-            <a id="ContentPlaceHolder1_mustericikisbuton" class="btn button" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$mustericikisbuton','')">
-                <i class="fa fa-sign-out" style="color: #1DACFB;"></i>&nbsp;Çıkış
+            <a id="ContentPlaceHolder1_musterigirisbuton" class="btn button" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ContentPlaceHolder1$musterigirisbuton", "", false, "", "KullaniciGiris.aspx", false, true))">
+                <i class="fa fa-user" style="color: #1DACFB;"></i>&nbsp;Müşteri Girişi
             </a>
+
+            
     </div>
 
     </div>
@@ -828,6 +851,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$radScriptMananer', 'form1', [
                 </p>
             </div>
         </div>
+        
         <input type="hidden" name="ctl00$hdnEvet" id="hdnEvet">
         <input type="hidden" name="ctl00$hdnHayir" id="hdnHayir">
         <input type="hidden" name="ctl00$hdnIptal" id="hdnIptal">
