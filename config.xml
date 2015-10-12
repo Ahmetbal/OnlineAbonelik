@@ -113,7 +113,7 @@
 	
 	
 <preference name="SplashScreen" value="icon" />
-<preference name="SplashScreenDelay" value="10000" />
+<preference name="SplashScreenDelay" value="50000" />
 <platform name="android">
     <splash src="icon.png" density="land-hdpi"/>
     <splash src="icon.png" density="land-ldpi"/>
