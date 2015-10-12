@@ -107,32 +107,42 @@
     <icon src="ricon-48.png"  gap:platform="winphone" />
     <icon src="icon-173.png" gap:platform="winphone"   gap:role="background" />
 
-    <!-- Define app splash screen for each platform. -->
-	<!--
-    <gap:splash src="res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
-    <gap:splash src="res/screen/android/screen-mdpi-portrait.png"       gap:platform="android" gap:qualifier="port-mdpi" />
-    <gap:splash src="res/screen/android/screen-hdpi-portrait.png"       gap:platform="android" gap:qualifier="port-hdpi" />
-    <gap:splash src="res/screen/android/screen-xhdpi-portrait.png"      gap:platform="android" gap:qualifier="port-xhdpi" />
-    <gap:splash src="res/screen/blackberry/screen-225.png"              gap:platform="blackberry" />
-    <gap:splash src="res/screen/ios/screen-iphone-portrait.png"         gap:platform="ios"     width="320" height="480" />
-    <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png"      gap:platform="ios"     width="640" height="960" />
-    <gap:splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios"     width="640" height="1136" />
-    <gap:splash src="res/screen/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1024" />
-    <gap:splash src="res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
-    <gap:splash src="res/screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" />
--->
-	<gap:splash src="clk-bogazici-logo-32.png"       gap:platform="android" gap:qualifier="port-ldpi" />
-    <gap:splash src="clk-bogazici-logo-32.png"       gap:platform="android" gap:qualifier="port-mdpi" />
-    <gap:splash src="clk-bogazici-logo-32.png"       gap:platform="android" gap:qualifier="port-hdpi" />
-    <gap:splash src="clk-bogazici-logo-32.png"      gap:platform="android" gap:qualifier="port-xhdpi" />
-    <gap:splash src="clk-bogazici-logo-32.png"              gap:platform="blackberry" />
-    <gap:splash src="clk-bogazici-logo-32.png"         gap:platform="ios"      />
-    <gap:splash src="clk-bogazici-logo-32.png"      gap:platform="ios"      />
-    <gap:splash src="clk-bogazici-logo-32.png" gap:platform="ios"      />
-    <gap:splash src="clk-bogazici-logo-32.png"           gap:platform="ios"     />
-    <gap:splash src="clk-bogazici-logo-32.png"          gap:platform="ios"      />
-    <gap:splash src="clk-bogazici-logo-32.png"      gap:platform="winphone" />
-	<gap:splash src="icon-568h@2x.png" gap:platform="ios" width="640" height="1136" />
+	
+<platform name="android">
+    <!-- you can use any density that exists in the Android project -->
+    <splash src="clk-bogazici-logo-32.png" density="land-hdpi"/>
+    <splash src="clk-bogazici-logo-32.png" density="land-ldpi"/>
+    <splash src="clk-bogazici-logo-32.png" density="land-mdpi"/>
+    <splash src="clk-bogazici-logo-32.png" density="land-xhdpi"/>
+
+    <splash src="clk-bogazici-logo-32.png" density="port-hdpi"/>
+    <splash src="clk-bogazici-logo-32.png" density="port-ldpi"/>
+    <splash src="clk-bogazici-logo-32.png" density="port-mdpi"/>
+    <splash src="clk-bogazici-logo-32.png" density="port-xhdpi"/>
+</platform>
+
+<platform name="ios">
+    <!-- images are determined by width and height. The following are supported -->
+    <splash src="clk-bogazici-logo-32.png" width="320" height="480"/>
+    <splash src="clk-bogazici-logo-32.png" width="640" height="960"/>
+    <splash src="clk-bogazici-logo-32.png" width="768" height="1024"/>
+    <splash src="clk-bogazici-logo-32.png" width="1536" height="2048"/>
+    <splash src="clk-bogazici-logo-32.png" width="1024" height="768"/>
+    <splash src="clk-bogazici-logo-32.png" width="2048" height="1536"/>
+    <splash src="clk-bogazici-logo-32.png" width="640" height="1136"/>
+    <splash src="clk-bogazici-logo-32.png" width="750" height="1334"/>
+    <splash src="clk-bogazici-logo-32.png" width="1242" height="2208"/>
+    <splash src="clk-bogazici-logo-32.png" width="2208" height="1242"/>
+</platform>
+
+
+
+<preference name="SplashScreenDelay" value="10000" />
+	
+	
+	
+	
+	
 	
 	
 	
