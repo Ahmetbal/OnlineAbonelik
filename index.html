@@ -82,6 +82,13 @@ function onDeviceReady() {
 */
 
 
+function onDeviceReady() {
+    app.initialize();
+    alert('hi');
+    StatusBar.overlaysWebView(false);
+    StatusBar.backgroundColorByHexString("#1d617f");
+}
+
     </script>
     <script type="text/javascript">
         $(function () {
@@ -430,9 +437,6 @@ function __doPostBack(eventTarget, eventArgument) {
 Sys.WebForms.PageRequestManager._initialize('ctl00$radScriptMananer', 'form1', [], [], [], 900, 'ctl00');
 //]]>
 </script>
-
-
-
 
     <img id="website" src="./index_files/MobilAppBanner.jpg" style="width: 100%; margin-top: -20px;" alt="websitebanner" usemap="#websitebannermap">
 
