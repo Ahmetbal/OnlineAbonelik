@@ -34,15 +34,15 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
   navigator.splashscreen.show();
 
-	StatusBar.hide();
-  StatusBar.show();
+	navigator.StatusBar.hide();
+  navigator.StatusBar.show();
 
-	if (StatusBar.isVisible) {
+	if (navigator.StatusBar.isVisible) {
 	// do something
 		alert('ggg');
 	}else {
 			alert('ddd');
-			alert(StatusBar.isVisible);
+			alert(navigator.StatusBar.isVisible);
 	}
 }
 
